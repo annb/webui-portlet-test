@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2003-2011 eXo Platform SAS.
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+-->
+
+<gatein-resources xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_resources_1_3 http://www.gatein.org/xml/ns/gatein_resources_1_3"
+	xmlns="http://www.gatein.org/xml/ns/gatein_resources_1_3">
+  
+  
+    <portlet-skin>
+    <application-name>webui-portlet-test</application-name>
+    <portlet-name>imagecrop</portlet-name>
+    <skin-name>Default</skin-name>
+    <css-path>/skin/TestPortlet/DefaultSkin/UIImageCropping/jWindowCrop.css</css-path>
+    <css-priority>1</css-priority>
+  </portlet-skin>
+  
+  
+	 <module>
+	    <name>jWindowCropper</name>
+	    <script>	       
+	       <path>/javascript/eXo/social/webui/jWindowCrop.js</path>
+	    </script>
+	    <depends>
+	      <module>jquery</module>
+	      <as>$</as>
+	    </depends>
+	  </module>     
+  
+  
+   
+	 <module>
+	    <name>commons-image-cropper</name>
+	    <script>	       
+	       <path>/javascript/eXo/social/webui/UIImageCropper.js</path>
+	    </script>
+	    <depends>
+	      <module>jquery</module>
+	      <as>$</as>
+	    </depends>
+	    <depends>
+	       <module>socialPlugin</module>
+	    </depends>
+	   	<depends>
+	       <module>jWindowCropper</module>
+	       <as>jWCropper</as>
+	    </depends>
+	  </module>   
+
+	  <module>
+	    <name>socialPlugin</name>
+	    <script>	      
+	      <path>/javascript/eXo/social/webui/Util.js</path>
+	    </script>
+	    <depends>
+	      <module>jquery</module>
+	      <as>$</as>
+	    </depends>
+	  </module>
+</gatein-resources>

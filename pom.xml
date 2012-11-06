@@ -1,0 +1,41 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>exo-test</groupId>
+	<artifactId>portlet-test</artifactId>
+	<packaging>war</packaging>
+	<version>1</version>
+
+	<parent>
+		<groupId>org.gatein.portal</groupId>
+		<artifactId>exo.portal.webui</artifactId>
+		<version>3.5.0.Beta01</version>
+	</parent>
+
+	<build>
+		<finalName>webui-portlet-test</finalName>
+
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.gatein.portal</groupId>
+			<artifactId>exo.portal.webui.eXo</artifactId>
+			<version>3.5.0.Beta01</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.gatein.portal</groupId>
+			<artifactId>exo.portal.webui.portal</artifactId>
+			<version>3.5.0.Beta01</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.exoplatform.commons</groupId>
+			<artifactId>commons-webui-component</artifactId>
+			<version>4.0.0.Alpha1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+</project>

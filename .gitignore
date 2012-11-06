@@ -1,0 +1,49 @@
+#Ignore XML config page
+*.log
+
+#
+# Default excludes
+#
+
+# Binaries
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.war
+*.ear
+*.sar
+*.class
+
+# Maven 
+target/
+
+#Properties 
+*.properties
+
+
+# IntelliJ project files 
+*.iml
+*.iws
+*.ipr
+.idea/
+
+# eclipse project file
+.settings/
+.classpath
+.project
+bin/
+logs/
+
+# OS
+.DS_Store
+
+# Misc
+*.swp
+
+#Firefox cache
+*/Cache/*

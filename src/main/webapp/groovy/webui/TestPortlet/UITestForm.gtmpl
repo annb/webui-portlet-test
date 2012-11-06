@@ -1,0 +1,12 @@
+<%
+/**
+* Created by The eXo Platform SAS
+* Author : Canh Pham Van
+*          canhpv@exoplatform.com
+* Sep 14, 2012
+*/
+%>
+
+<div class="$uicomponent.id">
+<div class="Text"><%= uicomponent.getText() %></div>
+</div>
