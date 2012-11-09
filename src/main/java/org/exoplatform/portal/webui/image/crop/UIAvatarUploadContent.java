@@ -189,6 +189,7 @@ public class UIAvatarUploadContent extends UIForm {
   public static class CropActionListener extends EventListener<UIAvatarUploadContent> {
     @Override
     public void execute(Event<UIAvatarUploadContent> event) throws Exception {
+      System.out.println("----CropActionListener-----");
       UIAvatarUploadContent uiAvatarUploadContent = event.getSource();
       AvatarAttachment att = uiAvatarUploadContent.avatarAttachment;
       
@@ -213,6 +214,8 @@ public class UIAvatarUploadContent extends UIForm {
       
       //
       image = image.getSubimage(x, y, w, h);
+      
+      System.out.println("X: "+x+"Y: "+y+"W: "+w +"H; "+h);
       
       // create and re-store attachment info
       MimeTypeResolver mimeTypeResolver = new MimeTypeResolver();
@@ -342,6 +345,9 @@ public class UIAvatarUploadContent extends UIForm {
   }
   
   private void crop() throws Exception {
+    
+    System.out.println("-----crop()---function");
+    
     int x_co = 0;
     int y_co = 0;
     int width_co = 0; 
@@ -400,6 +406,8 @@ public class UIAvatarUploadContent extends UIForm {
       height_co = (int) (height_cr*scale_OR);
     }
     
+    System.out.println("X: "+x_co+" Y: "+y_co+" W: "+width_co+" H "+height_co);
+
     // sub image with new information
     BufferedImage croppedImg = originImg.getSubimage(x_co, y_co, width_co, height_co);
     

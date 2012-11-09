@@ -131,7 +131,7 @@ public class UIAvatarUploader extends UIForm{
    */
   public static class ConfirmActionListener extends EventListener<UIAvatarUploader> {
     // The width of resized avatar fix 200px like facebook avatar
-    private static final int WIDTH = 200;
+    private static final int WIDTH = 240;
 
     @Override
     public void execute(Event<UIAvatarUploader> event) throws Exception {
@@ -178,17 +178,17 @@ public class UIAvatarUploader extends UIForm{
         }
         
         // Resize avatar to fixed width if can't(avatarAttachment == null) keep
-        // origin avatar
+//         origin avatar
+        AvatarAttachment avatarAttachment =null;
 //        AvatarAttachment avatarAttachment = ImageUtils.createResizedAvatarAttachment(uploadedStream,
-//                                                                                    WIDTH,
 //                                                                                    0,
+//                                                                                    WIDTH,
 //                                                                                    null,
 //                                                                                    fileName,
 //                                                                                    mimeType,
 //                                                                                    null);
  
         
-        AvatarAttachment avatarAttachment =null;
         if (avatarAttachment == null) {
           avatarAttachment = new AvatarAttachment(null,
                                                   fileName,

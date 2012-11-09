@@ -5,6 +5,7 @@
      <UITestPortletTextStringInput>Text</UITestPortletTextStringInput>
    </label>
    <action>
+   <Upload>You can upload a JPG or PNG file (File size is limited to 2MB)</Upload>
      <Save>Save</Save>
      <Cancel>Cancel</Cancel>
    </action>

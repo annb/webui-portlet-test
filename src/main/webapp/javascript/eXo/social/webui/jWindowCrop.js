@@ -18,26 +18,29 @@
 		base.$image = $(image); // target image jquery element
 		base.image = image; // target image dom element
 		base.$image.data("jWindowCrop", base); // target frame jquery element
-
+//		console.log("First image width: "+base.$image.width() + "original height: "+base.$image.height());
+//		console.log("2nd image width: "+base.$image.width() + "original height: "+base.$image.height());
 		base.namespace = 'jWindowCrop';
 		base.originalWidth = 0;
 		base.isDragging = false;
 		
 		base.init = function(){
+//			console.log("Begin init....");
+
 			base.$image.css({display:'none'}); // hide image until loaded
 			base.options = $.extend({},$.jWindowCrop.defaultOptions, options);
-	//		if(base.options.zoomSteps < 2) base.options.zoomSteps = 2;
+			if(base.options.zoomSteps < 2) base.options.zoomSteps = 2;
 
 			base.$image.addClass('jwc_image').wrap('<div class="jwc_frame" />'); // wrap image in frame
 			base.$frame = base.$image.parent();
 			base.$frame.append(base.options.loadingText);
-			base.$frame.append('<div class="jwc_controls" style="display:bloc;"><a href="#" class="jwc_zoom_in"></a><a href="#" class="jwc_zoom_out"></a><span>Drag to Reposition Photo</span></div>');
+			base.$frame.append('<div class="jwc_controls" style="display:'+(base.options.showControlsOnStart ? 'none' : 'block')+';"><a href="#" class="jwc_zoom_in"></a><a href="#" class="jwc_zoom_out"></a><span>click to drag</span></div>');
 			base.$frame.css({'overflow': 'hidden', 'position': 'relative', 'width': base.options.targetWidth, 'height': base.options.targetHeight});
 			base.$image.css({'position': 'absolute', 'top': '0px', 'left': '0px'});
-			initializeDimensions();
+		//	initializeDimensions();
 
-//			base.$frame.find('.jwc_zoom_in').on('click.'+base.namespace, base.zoomIn);
-//			base.$frame.find('.jwc_zoom_out').on('click.'+base.namespace, base.zoomOut);
+			base.$frame.find('.jwc_zoom_in').on('click.'+base.namespace, base.zoomIn);
+			base.$frame.find('.jwc_zoom_out').on('click.'+base.namespace, base.zoomOut);
 			base.$frame.on('mouseenter.'+base.namespace, handleMouseEnter);
 			base.$frame.on('mouseleave.'+base.namespace, handleMouseLeave);
 			base.$image.on('load.'+base.namespace, handeImageLoad);
@@ -71,6 +74,7 @@
 		};
 
 		function initializeDimensions() {
+//		console.log("initializeDimensions()");
 			if(base.originalWidth == 0) {
 				base.originalWidth = base.$image.width();
 				base.originalHeight = base.$image.height();
@@ -78,14 +82,14 @@
 			if(base.originalWidth > 0) {
 				var widthRatio = base.options.targetWidth / base.originalWidth;
 				var heightRatio = base.options.targetHeight / base.originalHeight;
-				widthRatio=1;
-				heightRatio=1;
 				//base.minPercent = (widthRatio >= heightRatio) ? widthRatio : heightRatio;
 				if(widthRatio >= heightRatio) {
 					base.minPercent = (base.originalWidth < base.options.targetWidth) ? (base.options.targetWidth / base.originalWidth) : widthRatio;
 				} else {
 					base.minPercent = (base.originalHeight < base.options.targetHeight) ? (base.options.targetHeight / base.originalHeight) : heightRatio;
 				}
+//		console.log("-original width: "+base.originalWidth + "original height: "+base.originalHeight);
+//		console.log("-image width: "+base.$image.width() + "original height: "+base.$image.height());
 				base.focalPoint = {'x': Math.round(base.originalWidth/2), 'y': Math.round(base.originalHeight/2)};
 				base.setZoom(base.minPercent);
 				base.$image.fadeIn('fast'); //display image now that it has loaded
@@ -136,10 +140,10 @@
 			}
 		}
 		function handleMouseEnter() {
-			if(base.options.smartControls) base.$frame.find('.jwc_controls').fadeOut('fast');
+			if(base.options.smartControls) base.$frame.find('.jwc_controls').fadeIn('fast');
 		}
 		function handleMouseLeave() {
-			if(base.options.smartControls) base.$frame.find('.jwc_controls').fadeIn('fast');
+			if(base.options.smartControls) base.$frame.find('.jwc_controls').fadeOut('fast');
 		}
 		
 		base.init();
@@ -165,4 +169,3 @@
 		return this.data("jWindowCrop");
 	};
 })($);
-
