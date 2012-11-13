@@ -29,8 +29,7 @@
     <skin-name>Default</skin-name>
     <css-path>/skin/TestPortlet/DefaultSkin/UIImageCropping/jWindowCrop.css</css-path>
     <css-priority>1</css-priority>
-  </portlet-skin>
-  
+  </portlet-skin>  
   
 	 <module>
 	    <name>jWindowCropper</name>
@@ -41,9 +40,7 @@
 	      <module>jquery</module>
 	      <as>$</as>
 	    </depends>
-	  </module>     
-  
-  
+	  </module>   
    
 	 <module>
 	    <name>commons-image-cropper</name>

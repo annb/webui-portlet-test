@@ -90,7 +90,7 @@ public class ImageUtils {
    * @return new AvatarAtachment that contain parameter values and resized
    *         avatar
    */
-  public static AvatarAttachment createResizedAvatarAttachment(InputStream imageStream,
+  public static ImageCroppingAttachment createResizedAvatarAttachment(InputStream imageStream,
                                                                int width,
                                                                int height,
                                                                String avatarId,
@@ -128,7 +128,7 @@ public class ImageUtils {
                     tmp);
 
       // Create new avatar attachment
-      AvatarAttachment newAvatarAttachment = new AvatarAttachment(avatarId,
+      ImageCroppingAttachment newAvatarAttachment = new ImageCroppingAttachment(avatarId,
                                                                   avatarFileName,
                                                                   avatarMimeType,
                                                                   new FileInputStream(tmp),

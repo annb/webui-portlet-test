@@ -59,7 +59,7 @@ public class UIImageCropPortlet extends UIPortletApplication{
     public void execute(Event<UIImageCropPortlet> event) throws Exception {
       UIImageCropPortlet uiProfileNavigation = event.getSource();
       UIPopupWindow uiPopup = uiProfileNavigation.getChild(org.exoplatform.webui.core.UIPopupWindow.class);
-      UIAvatarUploader uiAvatarUploader = uiProfileNavigation.createUIComponent(UIAvatarUploader.class, null, null);
+      UIImageCroppingUploader uiAvatarUploader = uiProfileNavigation.createUIComponent(UIImageCroppingUploader.class, null, null);
       uiPopup.setUIComponent(uiAvatarUploader);
       uiPopup.setShow(true);
     }
