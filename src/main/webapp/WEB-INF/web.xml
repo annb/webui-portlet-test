@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
 <web-app>
-<display-name>webui-portlet-test</display-name>
+<display-name>imagecrop</display-name>
 <description>This is the Test Webui Portlet</description>
 
 <filter>
