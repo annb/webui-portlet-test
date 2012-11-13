@@ -24,7 +24,7 @@
   
   
     <portlet-skin>
-    <application-name>webui-portlet-test</application-name>
+    <application-name>imagecrop</application-name>
     <portlet-name>imagecrop</portlet-name>
     <skin-name>Default</skin-name>
     <css-path>/skin/TestPortlet/DefaultSkin/UIImageCropping/jWindowCrop.css</css-path>

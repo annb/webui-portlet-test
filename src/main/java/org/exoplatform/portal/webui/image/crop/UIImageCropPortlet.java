@@ -28,9 +28,9 @@ import org.exoplatform.webui.config.annotation.EventConfig;
 
 /**
  * Created by The eXo Platform SAS
- * Author : Canh Pham Van
- *          canhpv@exoplatform.com
- * Oct 30, 2012  
+ * Author : An Bao NGUYEN
+ *          annb@exoplatform.com
+ * Oct 31, 2012  
  */
 @ComponentConfig(
    lifecycle = UIApplicationLifecycle.class,

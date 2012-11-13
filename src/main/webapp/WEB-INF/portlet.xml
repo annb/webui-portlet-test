@@ -3,59 +3,6 @@
 xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd">
-<portlet>
-	<description xml:lang="EN">Test Webui Portlet</description>
-	<portlet-name>TestWebuiPortlet</portlet-name>
-	<display-name xml:lang="EN">Test Webui Portlet</display-name>
-	<portlet-class>org.exoplatform.webui.application.portlet.PortletApplicationController</portlet-class>
-	<init-param>
-		<name>webui.configuration</name>
-		<value>/WEB-INF/conf/portlet/TestPortlet/webui/configuration.xml</value>
-	</init-param>
-	<expiration-cache>0</expiration-cache>
-	<supports>
-		<mime-type>text/html</mime-type>
-		<portlet-mode>edit</portlet-mode>
-		<portlet-mode>help</portlet-mode>
-	</supports>
-	<supported-locale>en</supported-locale>
-	<resource-bundle>locale.portlet.TestPortlet.TestPortlet</resource-bundle>
-	<portlet-info>
-		<title>Test Portlet</title>
-		<short-title>Test Portlet</short-title>
-		<keywords>Test Portlet</keywords>
-	</portlet-info>
-	<portlet-preferences>
-		<preference>
-			<name>text</name>
-			<value>Hello World</value>
-			<read-only>false</read-only>
-		</preference>
-	</portlet-preferences>
-</portlet>
-  <portlet>
-    <description xml:lang="EN">Test Portlet Romain</description>
-    <portlet-name>TestRomain</portlet-name>
-    <display-name xml:lang="EN">Test Portlet Romain</display-name>
-    <portlet-class>org.exoplatform.webui.application.portlet.PortletApplicationController</portlet-class>
-    <init-param>
-      <name>webui.configuration</name>
-      <!-- must match the path to configuration file -->
-      <value>/WEB-INF/conf/portlet/TestPortlet/testPortletRomain/configuration.xml</value>
-    </init-param>    
-    <expiration-cache>0</expiration-cache>
-    <supports>
-      <mime-type>text/html</mime-type>
-      <portlet-mode>help</portlet-mode>
-    </supports>
-    <supported-locale>en</supported-locale>
-    <resource-bundle>locale.testRomainPortlet</resource-bundle>     
-    <portlet-info>
-      <title>TestPortletRomain</title>
-      <short-title>TestPortletRomain</short-title>
-      <keywords>test</keywords>
-    </portlet-info>     
-  </portlet>
   
   <portlet>
     <description xml:lang="EN">Image Crop</description>
@@ -73,10 +20,10 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd http:
       <portlet-mode>help</portlet-mode>
     </supports>
     <supported-locale>en</supported-locale>
-    <resource-bundle>locale.testRomainPortlet</resource-bundle>     
+    <resource-bundle>locale.portlet.imagecropping.imagecropping</resource-bundle>     
     <portlet-info>
-      <title>TestImageCrop</title>
-      <short-title>TestImageCrop</short-title>
+      <title>Image Cropping</title>
+      <short-title>Image Cropping</short-title>
       <keywords>test</keywords>
     </portlet-info>     
   </portlet>  

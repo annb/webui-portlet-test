@@ -2,9 +2,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>exo-test</groupId>
-	<artifactId>portlet-test</artifactId>
+	<artifactId>imagecrop</artifactId>
 	<packaging>war</packaging>
-	<version>1</version>
 
 	<parent>
 		<groupId>org.gatein.portal</groupId>
@@ -13,7 +12,7 @@
 	</parent>
 
 	<build>
-		<finalName>webui-portlet-test</finalName>
+		<finalName>imagecrop</finalName>
 
 	</build>
 

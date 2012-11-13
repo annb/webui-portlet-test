@@ -30,7 +30,10 @@ import org.exoplatform.services.log.ExoLogger;
 import org.exoplatform.services.log.Log;
 
 /**
- * @author tuan_nguyenxuan Oct 29, 2010
+ * Created by The eXo Platform SAS
+ * Author : An Bao NGUYEN
+ *          annb@exoplatform.com
+ * Oct 31, 2012  
  */
 public class ImageUtils {
   public static final String KEY_SEPARATOR           = "_";
