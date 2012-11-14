@@ -54,24 +54,14 @@
         <img id="profileAvatar" src="$imageSource" title="$avatarTitle" alt="$avatarTitle" class="crop_me"/>
       </div>
 	  </div>
-	  <div class="FL">
-     <span>$lalbelFileName</span></span> <%= avatarAttachment.fileName %><br/>
-     <span>$labelFileType</span> <%= avatarAttachment.mimeType %><br/>
-     <span>$labelImageSize</span> <%= avatarAttachment.size %>
-     <span>$params</span>
-     <% uiform.renderField("croppedInfo")%>
-    </div>
-    
+	  </div>
 
-  </div>
-  
-  <div id="results">
-  <b>X</b>: <span id="crop_x"></span><br />
-  <b>Y</b>: <span id="crop_y"></span><br />
-  <b>W</b>: <span id="crop_w"></span><br />
-  <b>H</b>: <span id="crop_h"></span><br />
-</div>
-  
+      
+    <div class="FL">
+     <% uiform.renderField("croppedInfo")%>
+    </div>   
+
+<hr/>
   <div class="UIAction">
     <a onclick="$cropAction" id="cropAction" data="crop" href="javascript:void(0);" class="ActionButton LightBlueStyle">$cropLabel</a>
     <a onclick="$saveAction" href="javascript:void(0);" class="ActionButton LightBlueStyle">$labelSave</a>

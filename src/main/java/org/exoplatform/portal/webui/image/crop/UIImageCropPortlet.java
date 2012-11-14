@@ -43,9 +43,10 @@ public class UIImageCropPortlet extends UIPortletApplication{
   private final String POPUP_AVATAR_UPLOADER = "UIPopupAvatarUploader";
   
   
+  //create a popup 
   public UIImageCropPortlet() throws Exception {
     UIPopupWindow uiPopup = createUIComponent(UIPopupWindow.class, null, POPUP_AVATAR_UPLOADER);
-    uiPopup.setWindowSize(510, 0);
+//    uiPopup.setWindowSize(340, 0);
     addChild(uiPopup);
   }
 

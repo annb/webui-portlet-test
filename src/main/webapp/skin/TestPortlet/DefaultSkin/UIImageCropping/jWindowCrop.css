@@ -23,3 +23,9 @@
 } .jwc_horizontal::after {
 	content:"-";
 }
+
+#UIPopupAvatarUploader{
+width:340px;
+margin-left:auto;
+margin-right:auto;
+}
