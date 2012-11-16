@@ -200,7 +200,6 @@ public class UIImageCroppingUploader extends UIForm{
 
         UploadService uploadService = (UploadService) PortalContainer.getComponent(UploadService.class);
         uploadService.removeUploadResource(uploadId);
-
         uiAvatarUploadContent.setAvatarAttachment(avatarAttachment);
         uiPopup.setUIComponent(uiAvatarUploadContent);
         ctx.addUIComponentToUpdateByAjax(uiPopup);
@@ -218,6 +217,7 @@ public class UIImageCroppingUploader extends UIForm{
     public void execute(Event<UIImageCroppingUploader> event) throws Exception {
       UIImageCroppingUploader uiAvatarUploader = event.getSource();
       UIPopupWindow uiPopup = uiAvatarUploader.getParent();
+      uiPopup.setUIComponent(null);
       uiPopup.setShow(false);
     }
 

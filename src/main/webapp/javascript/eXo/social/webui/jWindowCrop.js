@@ -37,7 +37,7 @@
 			base.$frame.append('<div class="jwc_controls" style="display:'+(base.options.showControlsOnStart ? 'none' : 'block')+';"><a href="#" class="jwc_zoom_in"></a><a href="#" class="jwc_zoom_out"></a><span>click to drag</span></div>');
 			base.$frame.css({'overflow': 'hidden', 'position': 'relative', 'width': base.options.targetWidth, 'height': base.options.targetHeight});
 			base.$image.css({'position': 'absolute', 'top': '0px', 'left': '0px'});
-		//	initializeDimensions();
+			initializeDimensions();
 
 			base.$frame.find('.jwc_zoom_in').on('click.'+base.namespace, base.zoomIn);
 			base.$frame.find('.jwc_zoom_out').on('click.'+base.namespace, base.zoomOut);
@@ -57,7 +57,7 @@
 			} else if(percent < base.minPercent) {
 				percent = base.minPercent;	
 			}
-			base.$image.width(Math.ceil(base.originalWidth*percent));
+			base.$image.width(Math.floor(base.originalWidth*percent));
 			base.workingPercent = percent;
 			focusOnCenter();
 			updateResult();

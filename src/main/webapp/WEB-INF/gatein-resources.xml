@@ -51,23 +51,10 @@
 	      <module>jquery</module>
 	      <as>$</as>
 	    </depends>
-	    <depends>
-	       <module>socialPlugin</module>
-	    </depends>
 	   	<depends>
 	       <module>jWindowCropper</module>
 	       <as>jWCropper</as>
 	    </depends>
 	  </module>   
-
-	  <module>
-	    <name>socialPlugin</name>
-	    <script>	      
-	      <path>/javascript/eXo/social/webui/Util.js</path>
-	    </script>
-	    <depends>
-	      <module>jquery</module>
-	      <as>$</as>
-	    </depends>
-	  </module>
+	  
 </gatein-resources>
