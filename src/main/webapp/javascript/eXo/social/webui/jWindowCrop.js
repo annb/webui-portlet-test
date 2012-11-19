@@ -35,10 +35,11 @@
 		//	base.$frame.append('<div class="jwc_controls" style="display:'+(base.options.showControlsOnStart ? 'none' : 'block')+';"><a href="#" class="jwc_vertical"></a><a href="#" class="jwc_horizontal"></a><span>click to drag</span></div>');
 			base.$frame.css({'overflow': 'hidden', 'position': 'relative', 'width': base.options.targetWidth, 'height': base.options.targetHeight});
 			base.$image.css({'position': 'absolute', 'top': '0px', 'left': '0px'});
-		//	initializeDimensions();
+		
+			initializeDimensions();
 
-			base.$frame.find('.jwc_vertical').on('click.'+base.namespace, base.zoomIn);
-			base.$frame.find('.jwc_horizontal').on('click.'+base.namespace, base.zoomOut);
+//			base.$frame.find('.jwc_vertical').on('click.'+base.namespace, base.zoomIn);
+//			base.$frame.find('.jwc_horizontal').on('click.'+base.namespace, base.zoomOut);
 			base.$frame.on('mouseenter.'+base.namespace, handleMouseEnter);
 			base.$frame.on('mouseleave.'+base.namespace, handleMouseLeave);
 			base.$image.on('load.'+base.namespace, handeImageLoad);
@@ -49,6 +50,7 @@
 			
 		};
 
+		//method set zoom
 		base.setZoom = function(percent) {
 			if(base.minPercent >= 1) {
 				percent = base.minPercent;
@@ -62,17 +64,22 @@
 			focusOnCenter();
 			updateResult();
 		};
+		
+		//method set zoom in
 		base.zoomIn = function() {
 			var zoomIncrement = (1.0 - base.minPercent) / (base.options.zoomSteps-1);
 			base.setZoom(base.workingPercent+zoomIncrement);
 			return false;
 		};
+		
+		//method set zoom out
 		base.zoomOut = function() {
 			var zoomIncrement = (1.0 - base.minPercent) / (base.options.zoomSteps-1);
 			base.setZoom(base.workingPercent-zoomIncrement);
 			return false;
 		};
 
+		//method set initialize
 		function initializeDimensions() {
 			if(base.originalWidth == 0) {
 				base.originalWidth = base.$image.width();
@@ -98,20 +105,25 @@
 			}
 			else{
 				base.$frame.append('<div class="jwc_controls" style="display:'+(base.options.showControlsOnStart ? 'none' : 'block')+';"><a href="#" class="jwc_vertical"></a><span>click to drag</span></div>');	
-			}
-			
+			}			
 		}
+		
+		//method store focal point
 		function storeFocalPoint() {
 			var x = (parseInt(base.$image.css('left'))*-1 + base.options.targetWidth/2) / base.workingPercent;
 			var y = (parseInt(base.$image.css('top'))*-1 + base.options.targetHeight/2) / base.workingPercent;
 			base.focalPoint = {'x': Math.round(x), 'y': Math.round(y)};
 		}
+		
+		//method focus on center
 		function focusOnCenter() {
 			var left = fillContainer((Math.round((base.focalPoint.x*base.workingPercent) - base.options.targetWidth/2)*-1), base.$image.width(), base.options.targetWidth);
 			var top = fillContainer((Math.round((base.focalPoint.y*base.workingPercent) - base.options.targetHeight/2)*-1), base.$image.height(), base.options.targetHeight);
 			base.$image.css({'left': (left.toString()+'px'), 'top': (top.toString()+'px')})
 			storeFocalPoint();
 		}
+		
+		//method update result
 		function updateResult() {
 			base.result = {
 				cropX: Math.floor(parseInt(base.$image.css('left'))/base.workingPercent*-1),
@@ -159,7 +171,6 @@
 		targetWidth: 240,
 		targetHeight: 240,
 		zoomSteps: 10,
-		loadingText: 'Loading...',
 		smartControls: true,
 		showControlsOnStart: true,
 		onChange: function() {}

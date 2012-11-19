@@ -13,7 +13,6 @@
 
 	<build>
 		<finalName>imagecrop</finalName>
-
 	</build>
 
 	<dependencies>
@@ -36,5 +35,19 @@
 			<artifactId>commons-webui-component</artifactId>
 			<version>4.0.0.Alpha1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.10</version>
+				<scope>test</scope>
+			</dependency>
+			
+	      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.5.8</version>
+       	<scope>test</scope>
+        
+      </dependency>		
 	</dependencies>
 </project>
