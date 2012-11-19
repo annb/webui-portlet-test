@@ -32,14 +32,11 @@
 			base.$frame = base.$image.parent();
 			base.$frame.append(base.options.loadingText);
 			
-		//	base.$frame.append('<div class="jwc_controls" style="display:'+(base.options.showControlsOnStart ? 'none' : 'block')+';"><a href="#" class="jwc_vertical"></a><a href="#" class="jwc_horizontal"></a><span>click to drag</span></div>');
 			base.$frame.css({'overflow': 'hidden', 'position': 'relative', 'width': base.options.targetWidth, 'height': base.options.targetHeight});
 			base.$image.css({'position': 'absolute', 'top': '0px', 'left': '0px'});
 		
 			initializeDimensions();
 
-//			base.$frame.find('.jwc_vertical').on('click.'+base.namespace, base.zoomIn);
-//			base.$frame.find('.jwc_horizontal').on('click.'+base.namespace, base.zoomOut);
 			base.$frame.on('mouseenter.'+base.namespace, handleMouseEnter);
 			base.$frame.on('mouseleave.'+base.namespace, handleMouseLeave);
 			base.$image.on('load.'+base.namespace, handeImageLoad);

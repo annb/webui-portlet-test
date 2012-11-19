@@ -28,7 +28,7 @@ import org.exoplatform.webui.core.UIPopupWindow;
   //if (!imageSource) imageSource = LinkProvider.PROFILE_DEFAULT_AVATAR_URL;
 
   def changePicture = uicomponent.event('ChangePicture');
-  def changePictureLabel = "Change Photos 1";
+  def changePictureLabel = "Change Photos";
 %>
 <div class="UIProfileNavigationPortlet" id="$uicomponent.id">
   <% uicomponent.renderChild(UIPopupWindow.class); %>
