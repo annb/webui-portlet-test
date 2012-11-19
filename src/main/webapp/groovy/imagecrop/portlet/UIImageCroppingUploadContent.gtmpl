@@ -30,7 +30,7 @@
   def cropLabel = _ctx.appRes("${uicomponentId}.label.Crop");
   def labelSave = _ctx.appRes("${uicomponentId}.label.save")
   def labelCancel = _ctx.appRes("${uicomponentId}.label.cancel")
-  def avatarTitle = _ctx.appRes("${uicomponentId}.title.Avatar");
+  def imageAlt = _ctx.appRes("${uicomponentId}.title.Avatar");
   
   def cropAction = uicomponent.event("Crop")
   def saveAction = uicomponent.event("Save")
@@ -38,7 +38,8 @@
   def imageSource = uicomponent.imageSource;
   
   def params = """ {
-	  'cropLabel': '${cropLabel}'
+ 'imageSource': '${imageSource}',
+  'imageAlt': '${imageAlt}'
 	} """
   
   def jsmanager = _ctx.getRequestContext().getJavascriptManager();
@@ -50,9 +51,8 @@
   <% uiform.begin() %>
   <div class="AvatarInfo ClearFix">
     <div id="wrapper" class="FL">
-      <div class="image-decorator">
-        <img id="profileAvatar" src="$imageSource" title="$avatarTitle" alt="$avatarTitle" class="crop_me"/>
-      </div>
+        <div class="image-decorator" id="imageCropping">
+        </div>
 	  </div>
 	  </div>
 

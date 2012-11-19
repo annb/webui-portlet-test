@@ -29,6 +29,7 @@ import org.exoplatform.web.application.ApplicationMessage;
 import org.exoplatform.webui.application.WebuiRequestContext;
 import org.exoplatform.webui.config.annotation.ComponentConfig;
 import org.exoplatform.webui.config.annotation.ComponentConfigs;
+import org.exoplatform.webui.config.annotation.EventConfig;
 import org.exoplatform.webui.core.UIApplication;
 import org.exoplatform.webui.core.UIPopupWindow;
 import org.exoplatform.webui.core.lifecycle.UIFormLifecycle;
@@ -36,7 +37,6 @@ import org.exoplatform.webui.event.Event;
 import org.exoplatform.webui.event.EventListener;
 import org.exoplatform.webui.form.UIForm;
 import org.exoplatform.webui.form.UIFormUploadInput;
-import org.exoplatform.webui.config.annotation.EventConfig;
 
 /**
  * Created by The eXo Platform SAS
@@ -218,6 +218,7 @@ public class UIImageCroppingUploader extends UIForm{
     public void execute(Event<UIImageCroppingUploader> event) throws Exception {
       UIImageCroppingUploader uiAvatarUploader = event.getSource();
       UIPopupWindow uiPopup = uiAvatarUploader.getParent();
+      uiPopup.setUIComponent(null);
       uiPopup.setShow(false);
     }
 

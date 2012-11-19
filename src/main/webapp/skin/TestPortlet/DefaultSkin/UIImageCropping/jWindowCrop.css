@@ -1,5 +1,8 @@
 .jwc_frame {
-} .jwc_image {
+	left:70px;
+	right:70px;
+}
+.jwc_image {
 	cursor:move;
 } .jwc_controls {
 	background-color:#000;

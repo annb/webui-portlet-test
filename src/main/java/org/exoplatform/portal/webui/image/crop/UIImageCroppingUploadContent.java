@@ -16,11 +16,9 @@
  */
 package org.exoplatform.portal.webui.image.crop;
 
-import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
@@ -30,15 +28,15 @@ import javax.imageio.ImageIO;
 import org.exoplatform.commons.utils.MimeTypeResolver;
 import org.exoplatform.download.DownloadService;
 import org.exoplatform.download.InputStreamDownloadResource;
-
+import org.exoplatform.webui.application.WebuiRequestContext;
 import org.exoplatform.webui.config.annotation.ComponentConfig;
 import org.exoplatform.webui.config.annotation.EventConfig;
 import org.exoplatform.webui.core.UIComponent;
 import org.exoplatform.webui.core.UIPopupWindow;
 import org.exoplatform.webui.core.lifecycle.UIFormLifecycle;
 import org.exoplatform.webui.event.Event;
-import org.exoplatform.webui.event.EventListener;
 import org.exoplatform.webui.event.Event.Phase;
+import org.exoplatform.webui.event.EventListener;
 import org.exoplatform.webui.form.UIForm;
 import org.exoplatform.webui.form.UIFormStringInput;
 
@@ -123,6 +121,13 @@ public class UIImageCroppingUploadContent extends UIForm {
     this.avatarAttachment = avatarAttachment;
     setImageSource(avatarAttachment.getImageBytes());
   }
+  
+  
+ @Override
+ public void processRender(WebuiRequestContext context) throws Exception {
+   super.processRender(context);
+}  
+  
 
   /**
    * Gets the source of image.

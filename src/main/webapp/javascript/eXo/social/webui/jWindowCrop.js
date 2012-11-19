@@ -59,7 +59,8 @@
 			} else if(percent < base.minPercent) {
 				percent = base.minPercent;	
 			}
-			base.$image.width(Math.ceil(base.originalWidth*percent));
+		//	base.$image.width(Math.ceil(base.originalWidth*percent));
+			base.$image.width(Math.floor(base.originalWidth*percent));
 			base.workingPercent = percent;
 			focusOnCenter();
 			updateResult();
